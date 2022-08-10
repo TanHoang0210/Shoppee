@@ -1,0 +1,229 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #EE4D2D;
+    --border-color: #dbdbdb;
+    --header-height:120px;
+    --navbar-height:34px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+}
+*{
+    box-sizing: inherit ;
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+}
+/*respon*/
+.row{
+    margin-left:   -5px ;
+    margin-right: -5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid{
+    max-width: 1400px;
+    width: 100%;
+    margin: 0  auto;
+}
+.grid.wide{
+    max-width: 1400px;
+    margin:0 auto ;
+}
+.grid__full-width{
+    width: 100%;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:-5px ;
+    margin-right: -5px;
+
+}
+/*test*/
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 12.6667%;
+}
+.grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3333%;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes Growth {
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+    
+}
+/*modal*/
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    animation:  fadeIn linear 0.1s;
+    display: none;
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0, 0, 0.3);
+
+}
+.modal__body{
+    --growth-from: 0.7;
+    --growth-to:1;
+    margin: auto;
+    position: relative;/*dua thuoc tinh cua body cao hon layout*/
+    z-index: 1; 
+    border-radius: 5px;
+    animation:  Growth linear 0.2s;
+}
+
+/*button style*/
+.btn{
+    min-width: 142px;
+    min-height: 34px;
+    text-decoration: none;
+    border :none;
+    border-radius: 2px;
+    background-color: #fff;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    text-align: center;
+    padding : 0 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn.btn--normal:hover{
+    background-color: rgba(0,0,0,0.04);
+    cursor: pointer;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.btn.btn--primary{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    cursor: pointer;
+}
+/*vo hieu hoa 1 nut*/
+btn.btn-disabled{
+
+    cursor: default;
+    background-color: #999;
+}
+.btn.btn--size-s{
+    padding: 0 6px;
+    height: 30px;
+    width: 200px;
+    font-size: 12px;
+}
+/*slect input*/
+.select-input{
+    border-radius: 2px;
+    background-color: var(--white-color);
+    min-width: 200px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    position: relative;
+}
+.select-input__label{
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+.select-input-icon{
+    color: #999;
+    font-size: 1.4rem;
+    position: relative;
+    top: 1px;
+}
+.select-input__list{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    border-radius:2px ;
+    background-color: var(--white-color);
+    list-style: none;
+    padding:8px 16px ;
+    display: none;
+    z-index: 1;
+}
+.select-input__link{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 4px 0;
+}
+.select-input__link:hover{
+    color: var(--primary-color);
+}
+.select-input:hover .select-input__list{
+    display: block;
+}
+/*pagination*/
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagination-item{
+    list-style: none;
+    margin: 0 16px;
+}
+.pagination-item__link{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #999;
+    min-width: 40px;
+    --height: 30px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+}
+.pagination-item__icon{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #939393;
+    text-align: center;
+    line-height: 30px;
+}
+.pagination-item--active{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.home-product__pagination{
+    margin: 48px 0 32px 0;
+}
